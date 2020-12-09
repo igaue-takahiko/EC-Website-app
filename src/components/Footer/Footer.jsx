@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="wrap">
-                © SimpleTut 2020
+                © K2 2020
             </div>
         </footer>
     )

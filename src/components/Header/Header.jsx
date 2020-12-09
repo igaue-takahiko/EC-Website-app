@@ -9,7 +9,9 @@ const Header = (props) => {
         <header className="header">
             <div className="wrap">
                 <div className="logo">
-                    <img src={logo} alt="K2-shop"/>
+                    <Link to="/">
+                        <img src={logo} alt="K2-shop"/>
+                    </Link>
                 </div>
                 <nav>
                     <ul>
@@ -30,6 +32,11 @@ const Header = (props) => {
                         <li>
                             <Link to="/">
                                 Your Cart
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/registration">
+                                Register
                             </Link>
                         </li>
                     </ul>
