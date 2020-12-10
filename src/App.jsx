@@ -9,7 +9,8 @@ import {
 
 import {
     HomePage,
-    Registration
+    Registration,
+    Login
 } from './pages';
 
 const App = (props) => {
@@ -20,14 +21,17 @@ const App = (props) => {
                     <HomePageLayout>
                         <HomePage />
                     </HomePageLayout>
-                )}
-                />
+                )} />
                 <Route path="/registration" render={() => (
                     <MainLayout>
                         <Registration />
                     </MainLayout>
-                )}
-                />
+                )} />
+                <Route path="/login" render={() => (
+                    <MainLayout>
+                        <Login />
+                    </MainLayout>
+                )} />
             </Switch>
         </div>
     );

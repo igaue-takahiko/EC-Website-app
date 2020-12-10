@@ -1,12 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './SignIn.scss';
+import AuthWrapper from '../AuthWrapper/AuhWrapper';
+import { FormInput, Button } from '../Forms/index';
 
 const SignIn = () => {
+    const [ email, setEmail ] = useState("");
+    const [ password, setPassword ] = useState("");
+
+    const handleSubmit = e => {
+        e.preventDefault();
+    }
+
+    const configAuthWrapper = { headline: 'Login' }
+
     return (
-        <div>
-            SinIn
-        </div>
+        <AuthWrapper {...configAuthWrapper}>
+            <div className="formWrap">
+                <form onSubmit={handleSubmit}>
+                    <FormInput
+                        type="email" name="email" value={email}
+                        placeholder="Email"
+                        handleChange={e => setEmail(e.target.value)}
+                    />
+                    <FormInput
+                        type="password" name="password" value={password}
+                        placeholder="Password"
+                        handleChange={e => setPassword(e.target.value)}
+                    />
+                    <Button type="submit">
+                        LogIn
+                    </Button>
+                    <div className="socialSignin">
+                        <div className="row">
+                            <Button>
+                                Sign with Google
+                            </Button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </AuthWrapper>
     )
 }
 

@@ -1,9 +1,9 @@
 import React from 'react';
-import { SignIn } from '../../components';
+import { SignUp } from '../../components';
 
 
 const Registration = () => {
-    return <SignIn />;
+    return <SignUp />;
 }
 
 export default Registration

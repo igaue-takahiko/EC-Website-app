@@ -7,7 +7,7 @@ firebase.initializeApp(firebaseConfig);
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
-export const FirebaseTimestamp = firebase.firestore.Timestamp
+export const firebaseTimestamp = firebase.firestore.Timestamp
 
 export const googleProvider = new firebase.auth.GoogleAuthProvider();
 googleProvider.setCustomParameters({ prompt: 'select_account' });
@@ -27,7 +27,7 @@ export const handleUserProfile = async ({ userAuth, additionalData }) => {
             await  userRef.set({
                 displayName,
                 email,
-                createdDate: FirebaseTimestamp,
+                createdDate: firebaseTimestamp,
                 userRoles,
                 ...additionalData
             })
