@@ -34,7 +34,7 @@ const SignIn = () => {
                     <div className="socialSignin">
                         <div className="row">
                             <Button>
-                                Sign with Google
+                                Sign in with Google
                             </Button>
                         </div>
                     </div>
