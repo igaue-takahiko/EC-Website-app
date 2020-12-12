@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import './SignIn.scss';
 import AuthWrapper from '../AuthWrapper/AuhWrapper';
@@ -37,6 +38,11 @@ const SignIn = () => {
                                 Sign in with Google
                             </Button>
                         </div>
+                    </div>
+                    <div className="links">
+                        <Link to="/recovery">
+                            Reset Password
+                        </Link>
                     </div>
                 </form>
             </div>

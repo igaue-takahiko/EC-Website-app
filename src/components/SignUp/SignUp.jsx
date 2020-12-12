@@ -40,7 +40,9 @@ const SignUp = () => {
                     <ul>
                         {errors.map((error, index) => {
                             return (
-                                <li key={index}>{error}</li>
+                                <li className="error" key={index}>
+                                    {error}
+                                </li>
                             )
                         })}
                     </ul>

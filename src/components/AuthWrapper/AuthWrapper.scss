@@ -2,13 +2,15 @@
     display: block;
     width: 100%;
     max-width: 40.0rem;
-    margin: 4rem auto 6rem;
-    border: 1px solid black;
+    margin: 10rem auto;
+    background: rgb(245, 243, 243);
+    border: 2px solid black;
+    border-radius: 4px;
 
     .wrap {
         padding: 10px;
         h2 {
-            font-size: 2.2rem;
+            font-size: 2.8rem;
             line-height: 1;
             font-weight: 400;
             text-transform: uppercase;
@@ -16,7 +18,11 @@
             display: block;
             width: 100%;
             padding: 0;
-            margin: 0 auto 3rem;
+            margin: 10px auto 3rem;
+            color: rgb(216, 91, 75);
+        }
+        .children {
+            margin-bottom: 10px;
         }
     }
 }

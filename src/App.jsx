@@ -9,6 +9,7 @@ import {
 
 import {
     HomePage,
+    Recovery,
     Registration,
     Login
 } from './pages';
@@ -30,6 +31,11 @@ const App = (props) => {
                 <Route path="/login" render={() => (
                     <MainLayout>
                         <Login />
+                    </MainLayout>
+                )} />
+                <Route path="/recovery" render={() => (
+                    <MainLayout>
+                        <Recovery />
                     </MainLayout>
                 )} />
             </Switch>
