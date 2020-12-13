@@ -1,19 +1,47 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useHistory } from 'react-router-dom';
 
 import './SignIn.scss';
+import { emailSignInStart, googleSignInStart } from '../../redux/User/actions';
 import AuthWrapper from '../AuthWrapper/AuhWrapper';
 import { FormInput, Button } from '../Forms/index';
 
+const mapState = ({ user }) => ({
+    currentUser: user.currentUser
+})
+
 const SignIn = () => {
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const {currentUser } = useSelector(mapState)
+
     const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
 
     const handleSubmit = e => {
         e.preventDefault();
+        dispatch(emailSignInStart({ email, password }))
+    }
+
+    const handleGoogleSignIn = () => {
+        dispatch(googleSignInStart())
+    }
+
+    const resetForm = () => {
+        setEmail("")
+        setPassword("")
     }
 
     const configAuthWrapper = { headline: 'Login' }
+
+    useEffect(() => {
+        if (currentUser) {
+            resetForm();
+            history.push("/")
+        }
+    },[currentUser, history])
 
     return (
         <AuthWrapper {...configAuthWrapper}>
@@ -34,7 +62,7 @@ const SignIn = () => {
                     </Button>
                     <div className="socialSignin">
                         <div className="row">
-                            <Button>
+                            <Button onClick={handleGoogleSignIn}>
                                 Sign in with Google
                             </Button>
                         </div>

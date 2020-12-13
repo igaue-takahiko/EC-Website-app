@@ -21,13 +21,14 @@ export const handleUserProfile = async ({ userAuth, additionalData }) => {
 
     if (!snapshot.exists) {
         const { displayName, email } = userAuth;
+        const timestamp = new Date();
         const userRoles = ['user'];
 
         try {
             await  userRef.set({
                 displayName,
                 email,
-                createdDate: firebaseTimestamp,
+                createdDate: timestamp,
                 userRoles,
                 ...additionalData
             })
@@ -35,7 +36,7 @@ export const handleUserProfile = async ({ userAuth, additionalData }) => {
             alert(error.message)
         }
     }
-    return userRef();
+    return userRef;
 };
 
 export const getCurrentUser = () => {

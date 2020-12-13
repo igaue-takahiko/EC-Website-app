@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import './SignUp.scss'
+import { signUpUserStart } from '../../redux/User/actions';
 import AuthWrapper from '../AuthWrapper/AuhWrapper';
 import { FormInput, Button } from '../Forms';
 
@@ -11,7 +13,9 @@ const mapState = ({ user }) => ({
 })
 
 const SignUp = () => {
+    const dispatch = useDispatch();
     const history = useHistory();
+    const { currentUser, userErr } = useSelector(mapState)
 
     const [ displayName, setDisplayName ] = useState("");
     const [ email, setEmail ] = useState("");
@@ -24,14 +28,33 @@ const SignUp = () => {
         setEmail("");
         setPassword("");
         setConfirmPassword("");
-        setErrors("");
+        setErrors([]);
     };
 
     const configAuthWrapper = { headline: "Registration" }
 
     const handleFormSubmit = e => {
         e.preventDefault();
-    }
+        dispatch(signUpUserStart({
+            displayName,
+            email,
+            password,
+            confirmPassword
+        }))
+    };
+
+    useEffect(() => {
+        if (currentUser) {
+            reset();
+            history.push("/")
+        }
+    },[currentUser, history])
+
+    useEffect(() => {
+        if (Array.isArray(userErr) && userErr.length > 0) {
+            setErrors(userErr)
+        }
+    },[userErr])
 
     return (
         <AuthWrapper {...configAuthWrapper}>

@@ -14,7 +14,7 @@ import {
     Login
 } from './pages';
 
-const App = (props) => {
+const App = () => {
     return (
         <div className="App">
             <Switch>
