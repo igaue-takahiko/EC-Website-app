@@ -4,4 +4,8 @@ export const initialState = {
         resetPasswordSuccess: false,
         userErr: []
     },
+    products: {
+        products: [],
+        product: {},
+    }
 };
