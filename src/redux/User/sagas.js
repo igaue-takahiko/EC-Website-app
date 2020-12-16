@@ -28,6 +28,16 @@ export function* getSnapshotFromUserAuth(user, additionalData = {}) {
 }
 
 export function* emailSignIn({ payload: { email, password } }) {
+    if (email === "") {
+        const error = ['The email must be entered'];
+        yield put(userError(error))
+        return;
+    };
+    if (password === "") {
+        const error = ['The password must be entered'];
+        yield put(userError(error))
+        return;
+    };
     try {
         const { user } = yield auth.signInWithEmailAndPassword(email, password);
         yield getSnapshotFromUserAuth(user);
@@ -73,11 +83,26 @@ export function* signUpUser({ payload: {
     password,
     confirmPassword
 }}) {
-    if (password !== confirmPassword) {
-        const error = ['password Don\'t match'];
+    if (displayName === "") {
+        const error = ['The name must be entered'];
         yield put(userError(error))
         return;
-    }
+    };
+    if (email === "") {
+        const error = ['The email must be entered'];
+        yield put(userError(error))
+        return;
+    };
+    if (password === "") {
+        const error = ['The password must be entered'];
+        yield put(userError(error))
+        return;
+    };
+    if (password !== confirmPassword) {
+        const error = ['Password Don\'t match'];
+        yield put(userError(error))
+        return;
+    };
 
     try {
         const { user } = yield auth.createUserWithEmailAndPassword(email, password);

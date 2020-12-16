@@ -8,17 +8,19 @@ import AuthWrapper from '../AuthWrapper/AuhWrapper';
 import { FormInput, Button } from '../Forms/index';
 
 const mapState = ({ user }) => ({
-    currentUser: user.currentUser
+    currentUser: user.currentUser,
+    userErr: user.userErr
 })
 
 const SignIn = () => {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const {currentUser } = useSelector(mapState)
+    const { currentUser, userErr } = useSelector(mapState)
 
     const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
+    const [ errors, setErrors ] = useState([]);
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -32,6 +34,7 @@ const SignIn = () => {
     const resetForm = () => {
         setEmail("")
         setPassword("")
+        setErrors([])
     }
 
     const configAuthWrapper = { headline: 'Login' }
@@ -43,9 +46,26 @@ const SignIn = () => {
         }
     },[currentUser, history])
 
+    useEffect(() => {
+        if (Array.isArray(userErr) && userErr.length > 0) {
+            setErrors(userErr)
+        }
+    },[userErr])
+
     return (
         <AuthWrapper {...configAuthWrapper}>
             <div className="formWrap">
+            {errors.length > 0 && (
+                    <ul>
+                        {errors.map((error, index) => {
+                            return (
+                                <li className="error" key={index}>
+                                    {error}
+                                </li>
+                            )
+                        })}
+                    </ul>
+                )}
                 <form onSubmit={handleSubmit}>
                     <FormInput
                         type="email" name="email" value={email}

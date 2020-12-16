@@ -1,5 +1,11 @@
 .formWrap {
     margin: 3rem auto 0;
+    ul {
+        list-style: none;
+        .error {
+            color: red;
+        }
+    }
 }
 
 .socialSignin {
