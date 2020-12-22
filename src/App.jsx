@@ -4,15 +4,18 @@ import { Switch, Route } from 'react-router-dom';
 import { checkUserSession } from './redux/User/actions';
 import './default.scss';
 
-import { WithAuth } from './hoc';
+import { WithAuth, WithAdminAuth } from './hoc';
+import { AdminToolbar } from './components';
 
 import {
+    AdminLayout,
     DashBoardLayout,
     HomePageLayout,
     MainLayout,
 } from './Layouts';
 
 import {
+    Admin,
     HomePage,
     Recovery,
     Registration,
@@ -29,6 +32,7 @@ const App = () => {
 
     return (
         <div className="App">
+            <AdminToolbar />
             <Switch>
                 <Route exact path="/" render={() => (
                     <HomePageLayout>
@@ -56,6 +60,13 @@ const App = () => {
                             <DashBoard />
                         </DashBoardLayout>
                     </WithAuth>
+                )} />
+                <Route path="/admin" render={() => (
+                    <WithAdminAuth>
+                        <AdminLayout>
+                            <Admin />
+                        </AdminLayout>
+                    </WithAdminAuth>
                 )} />
             </Switch>
         </div>

@@ -9,13 +9,13 @@ const Directory = () => {
         <div className="directory">
             <div className="wrap">
                 <div
-                    className="item"
+                    className="itemWomen"
                     style={{ backgroundImage: `url(${WomansImage})` }}
                 >
                     <button>Womens</button>
                 </div>
                 <div
-                    className="item"
+                    className="itemMens"
                     style={{ backgroundImage: `url(${MensImage})` }}
                 >
                     <button>Mens</button>

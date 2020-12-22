@@ -1,7 +1,7 @@
 import React from 'react';
 import './AuthWrapper.scss'
 
-const AuhWrapper = ({ headline, children }) => {
+const AuthWrapper = ({ headline, children }) => {
     return (
         <div className="authWrapper">
             <div className="wrap">
@@ -14,4 +14,4 @@ const AuhWrapper = ({ headline, children }) => {
     )
 }
 
-export default AuhWrapper
+export default AuthWrapper

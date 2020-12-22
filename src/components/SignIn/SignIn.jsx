@@ -89,7 +89,7 @@ const SignIn = () => {
                     </div>
                     <div className="links">
                         <Link to="/recovery">
-                            Reset Password
+                            Forget Password ?
                         </Link>
                     </div>
                 </form>

@@ -1,8 +1,12 @@
+export { default as AdminToolbar } from './AdminToolbar/AdminToolbar'
 export { default as AuthWrapper } from './AuthWrapper/AuhWrapper'
 export { default as Directory } from './Directory/Directory'
 export { default as EmailPassword } from './EmailPassword/EmailPassword'
 export { default as Footer } from './Footer/Footer'
 export { default as Header } from './Header/Header'
+export { default as ImageArea } from './ImageArea/ImageArea'
+export { default as LoadMore } from './LoadMore/LoadMore';
+export { default as Modal } from './Modal/Modal';
 export { default as SignIn } from './SignIn//SignIn'
 export { default as SignUp } from './SignUp/SignUp'
 export { default as VerticalNav } from './VerticalNav/VerticalNav'

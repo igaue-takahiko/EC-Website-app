@@ -23,7 +23,7 @@ export function* addProduct({ payload }) {
     }
 }
 
-export function* onAddProductsStart() {
+export function* onAddProductStart() {
     yield takeLatest(productsTypes.ADD_NEW_PRODUCT_START, addProduct);
 }
 
@@ -68,7 +68,7 @@ export function* onFetchProductStart() {
 
 export default function* productsSagas() {
     yield all([
-        call(onAddProductsStart),
+        call(onAddProductStart),
         call(onFetchProductsStart),
         call(onDeleteProductStart),
         call(onFetchProductStart),

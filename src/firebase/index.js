@@ -1,5 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
+import 'firebase/storage';
 import 'firebase/auth';
 import { firebaseConfig } from './config';
 
@@ -7,7 +8,8 @@ firebase.initializeApp(firebaseConfig);
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
-export const firebaseTimestamp = firebase.firestore.Timestamp
+export const storage = firebase.storage();
+export const firebaseTimestamp = firebase.firestore.Timestamp;
 
 export const googleProvider = new firebase.auth.GoogleAuthProvider();
 googleProvider.setCustomParameters({ prompt: 'select_account' });

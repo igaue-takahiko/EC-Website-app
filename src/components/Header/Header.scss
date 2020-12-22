@@ -1,16 +1,29 @@
 .header {
-    height: 7.5rem;
+    background: #fff;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 3;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+    .header__space {
+        width: 750px;
+    }
 
     .wrap {
-        position: relative;
-        height: 100%;
-        max-width: 1450px;
-        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+        max-width: 550px;
 
         .logo {
             width: 13.0rem;
             position: absolute;
+            justify-self: start;
             top: 40%;
             left: 10px;
             cursor: pointer;
@@ -23,72 +36,42 @@
                 width: 100%;
                 height: 90px;
                 margin: 0;
+                mix-blend-mode: multiply;
+            }
+        }
+        .menu__icon {
+            display: none;
+            @media screen and (max-width: 960px){
+                display: block;
+                position: absolute;
+                height: 40px;
+                width: 40px;
+                top: 15px;
+                right: 0;
+                transform: translate(-100%, 20%);
+                font-size: 1.8rem;
+                cursor: pointer;
+                z-index: 10;
             }
         }
 
-        nav {
-            display: block;
-            width: 100%;
-            height: 100%;
-            padding: 0;
-            margin: 0;
+        .header__menu {
+            display: flex;
+            grid-template-columns: repeat(4, auto);
+            grid-gap: 10px;
+            list-style: none;
+            text-align: center;
+            width: 60vw;
+            margin-right: 2rem;
 
-            ul,
-            ul li {
-                padding: 0;
-                margin: 0;
-                height: 100%;
-            }
-
-            ul {
-                text-align: center;
-
-                li {
-                    display: inline-block;
-                    margin: 0 1rem;
-                    list-style-type: none;
-
-                    a {
-                        font-size: 1.8rem;
-                        line-height: 6.5rem;
-                        vertical-align: middle;
-                        color: black;
-                        text-decoration: none;
-                        text-transform: uppercase;
-                        cursor: pointer;
-                        &:hover {
-                            color: rgb(216, 91, 75);
-                        }
-                    }
-                }
-            }
-        }
-
-        .callToActions {
-            position: absolute;
-            top: 50%;
-            right: 10px;
-            -webkit-transform: translateY(-50%);
-            -moz-transform: translateY(-50%);
-            transform: translateY(-50%);
-
-            ul,
-            li {
-                margin: 0;
-                padding: 0;
-            }
-
-            li {
+            .header__item {
                 display: inline-block;
                 list-style-type: none;
                 margin-right: 1.5rem;
-
-                &:last-child {
-                    margin-right: 0;
+                @media screen and (max-width: 960px) {
+                    position: relative;
                 }
-
-                a,
-                span {
+                .header__links {
                     font-size: 1.8rem;
                     line-height: 1;
                     color: black;
@@ -97,7 +80,40 @@
                     cursor: pointer;
                     &:hover {
                         color: rgb(216, 91, 75);
+                        border-bottom: 1px solid rgb(216, 91, 75);
                     }
+                    @media screen and (max-width: 960px) {
+                        text-align: center;
+                        padding: 2.5rem 0;
+                        width: 100%;
+                        display: table;
+                        border-bottom: 1px solid rgb(216, 91, 75);
+                    }
+                }
+            }
+            @media screen and (max-width: 960px) {
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                width: 70%;
+                height: 100vh;
+                position: absolute;
+                top: 80px;
+                left: -110%;
+                opacity: 1;
+                transition: all 0.5s ease;
+                border-top: 2px solid rgb(216, 91, 75);
+                border-right: 2px solid rgb(216, 91, 75);
+                border-radius: 3px;
+                &.active {
+                    background: rgb(245, 243, 243);
+                    left: 0;
+                    opacity: 1;
+                    transition: all 0.5s ease;
+                    border-top: 2px solid rgb(216, 91, 75);
+                    border-right: 2px solid rgb(216, 91, 75);
+                    border-radius: 3px;
+                    z-index: 5;
                 }
             }
         }
