@@ -20,7 +20,8 @@ import {
     Recovery,
     Registration,
     Login,
-    DashBoard
+    DashBoard,
+    Search
 } from './pages';
 
 const App = () => {
@@ -38,6 +39,16 @@ const App = () => {
                     <HomePageLayout>
                         <HomePage />
                     </HomePageLayout>
+                )} />
+                <Route exact path="/search" render={() => (
+                    <MainLayout>
+                        <Search />
+                    </MainLayout>
+                )} />
+                <Route path="/search/:filterType" render={() => (
+                    <MainLayout>
+                        <Search />
+                    </MainLayout>
                 )} />
                 <Route path="/registration" render={() => (
                     <MainLayout>

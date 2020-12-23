@@ -1,6 +1,7 @@
 .formRow {
     display: inline-block;
     width: 100%;
+    padding-inline-start: 200px;
 
     label {
         display: block;
@@ -21,5 +22,6 @@
         border: none;
         outline: none;
         cursor: pointer;
+        border-bottom: 1px solid rgb(216, 91, 75);
     }
 }

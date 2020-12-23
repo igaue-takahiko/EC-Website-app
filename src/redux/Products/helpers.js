@@ -2,7 +2,7 @@ import { firestore } from '../../firebase';
 
 export const handleAddProduct = (product) => {
     return new Promise((resolve, reject) => {
-        firestore.collection('products').doc().set(product).then(() => {
+        firestore.collection('products').doc().set(product, { merge: true}).then(() => {
             resolve();
         }).catch((error) => {
             reject(error)
@@ -15,7 +15,8 @@ export const handleFetchProducts = ({ filterType, startAfterDoc, persisProducts 
         const pageSize = 6;
 
         let ref = firestore.collection('products').orderBy('createdDate').limit(pageSize);
-        if (filterType) ref = ref.where('productCategory', '==', filterType);
+        if (filterType) ref = ref.where('productGender', '==', filterType);
+        // if (filterType) ref = ref.where('productCategory', '==', filterType);
         if (startAfterDoc) ref = ref.startAfter(startAfterDoc);
 
         ref.get().then((snapshot) => {
