@@ -1,0 +1,39 @@
+.productCard {
+    max-width: 80.0rem;
+    margin: 20px auto 10.0rem;
+    padding: 16px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
+    .hero {
+        display: block;
+        width: 100%;
+        margin: 2rem auto;
+        img {
+            display: block;
+            width: 100%;
+            margin: 0;
+        }
+    }
+
+    .productDetails {
+        ul,
+        ul li {
+            padding: 0;
+            margin: 0;
+        }
+        ul li {
+            list-style-type: none;
+            margin: 0 auto 1rem;
+            h1 {
+                margin: 0;
+            }
+            .price {
+                color: rgb(216, 91, 75);
+            }
+        }
+    }
+    .addToCart {
+        margin-top: 20px;
+        max-width: 25.0rem;
+    }
+}

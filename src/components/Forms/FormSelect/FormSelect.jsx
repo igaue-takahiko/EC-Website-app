@@ -7,19 +7,21 @@ const FormSelect = ({ options, defaultValue, handleChange, label, ...otherProps 
     }
 
     return (
-        <div className="formRow">
-            {label && (
-                <label>{label}</label>
-            )}
-            <select className="formSelect" value={defaultValue} onChange={handleChange}>
-                {options.map((option, index) => {
-                    const {value, name} = option;
+        <div style={{ textAlign: "center" }}>
+            <div className="formRowSelect">
+                {label && (
+                    <label>{label}</label>
+                )}
+                <select className="formSelect" value={defaultValue} onChange={handleChange}>
+                    {options.map((option, index) => {
+                        const {value, name} = option;
 
-                    return (
-                        <option key={index} value={value}>{name}</option>
-                    )
-                })}
-            </select>
+                        return (
+                            <option key={index} value={value}>{name}</option>
+                        )
+                    })}
+                </select>
+            </div>
         </div>
     )
 }

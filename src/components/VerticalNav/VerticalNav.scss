@@ -30,6 +30,20 @@
                 &:hover {
                     background-color: rgb(245, 243, 243);
                 }
+                .home-icon {
+                    position: absolute;
+                    margin-left: 5px;
+                    font-size: 70px;
+                    width: 28px;
+                    transform: translateY(-40%);
+                }
+                .exit-icon {
+                    position: absolute;
+                    margin-left: 5px;
+                    font-size: 50px;
+                    width: 23px;
+                    transform: translateY(-33%);
+                }
             }
         }
     }

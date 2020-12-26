@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import { checkUserSession } from './redux/User/actions';
 import './default.scss';
+import 'aos/dist/aos.css';
 
 import { WithAuth, WithAdminAuth } from './hoc';
 import { AdminToolbar } from './components';
@@ -21,7 +22,8 @@ import {
     Registration,
     Login,
     DashBoard,
-    Search
+    Search,
+    ProductDetails,
 } from './pages';
 
 const App = () => {
@@ -48,6 +50,11 @@ const App = () => {
                 <Route path="/search/:filterType" render={() => (
                     <MainLayout>
                         <Search />
+                    </MainLayout>
+                )} />
+                <Route path="/product/:productID" render={() => (
+                    <MainLayout>
+                        <ProductDetails />
                     </MainLayout>
                 )} />
                 <Route path="/registration" render={() => (

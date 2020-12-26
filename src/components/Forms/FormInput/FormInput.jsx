@@ -3,7 +3,7 @@ import './FormInput.scss'
 
 const FormInput = ({ handleChange, label, ...otherProps }) => {
     return (
-        <div className="formRow">
+        <div className="formRowInput">
             {label && (
                 <label>{label}</label>
             )}

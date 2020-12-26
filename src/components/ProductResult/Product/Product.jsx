@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
+import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
+import Aos from 'aos';
 
 import NoImage from '../../../assets/img/no_image.png';
 import { Button } from '../../Forms';
@@ -15,6 +17,14 @@ const Product = (product) => {
         productName,
         productPrice,
     } = product;
+
+    useEffect(() => {
+        Aos.init({
+            duration: 1400,
+            offset: 10,
+            anchorPlacement: "center-center",
+        })
+    },[]);
 
     const productThumbnails = (productThumbnail.length > 0) ? productThumbnail : [NoImage]
 
@@ -35,7 +45,7 @@ const Product = (product) => {
     }
 
     return (
-        <div className="product">
+        <div className="product" data-aos="fade-up">
             <div className="thumb">
                 <Link to={`/product/${documentID}`}>
                     <img src={productThumbnails} alt={productName}/>
@@ -58,7 +68,7 @@ const Product = (product) => {
                     <li>
                         <div className="addToCart">
                             <Button {...configAddToCartBtn} onClick={() => handleAddToCart(product)}>
-                                Add to cart
+                                Add to cart <ShoppingCartOutlinedIcon className="btn-icon" />
                             </Button>
                         </div>
                     </li>

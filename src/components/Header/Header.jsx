@@ -55,7 +55,7 @@ const Header = () => {
                             </Link>
                         </li>
                         <li className="header__item">
-                            <Link className="header__links" to="/" onClick={closeModalMenu}>
+                            <Link className="header__links" to="/cart" onClick={closeModalMenu}>
                                 Your Cart
                             </Link>
                         </li>

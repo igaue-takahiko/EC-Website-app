@@ -26,9 +26,11 @@ const DashBoardLayout = (props) => {
                                         Home
                                     </Link>
                                 </li>
-                                <span className="signOut" onClick={() => signOut()}>
-                                    Sign Out
-                                </span>
+                                <li>
+                                    <span className="signOut" onClick={() => signOut()}>
+                                        Sign Out
+                                    </span>
+                                </li>
                             </ul>
                         </VerticalNav>
                     </Grid>

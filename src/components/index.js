@@ -7,6 +7,7 @@ export { default as Header } from './Header/Header';
 export { default as ImageArea } from './ImageArea/ImageArea';
 export { default as LoadMore } from './LoadMore/LoadMore';
 export { default as Modal } from './Modal/Modal';
+export { default as ProductCard } from './ProductCard/ProductCard';
 export { default as ProductResult } from './ProductResult/ProductResult';
 export { default as SignIn } from './SignIn//SignIn';
 export { default as SignUp } from './SignUp/SignUp';

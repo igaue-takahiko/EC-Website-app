@@ -1,5 +1,5 @@
 .btn {
-    display: block;
+    position: relative;
     width: 100%;
     font-size: 1.8rem;
     line-height: 1;
@@ -8,8 +8,7 @@
     color: white;
     background: black;
     padding: 1rem 10px;
-    margin: 10px auto;
-    border: 0;
+    margin: .5rem 0;
     outline: none;
     cursor: pointer;
     border: 3px solid rgb(216, 91, 75);
@@ -19,5 +18,13 @@
     &:hover {
         transform: translateY(-4px);
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12), 0 3px 10px 0 rgba(0,0,0,0.12), 0 4px 7px -2px rgba(0,0,0,0.2);
+    }
+    .btn-icon {
+        position: absolute;
+        font-size: 20px;
+        top: 50%;
+        right: 5px;
+        width: 23px;
+        transform: translateY(-50%);
     }
 }

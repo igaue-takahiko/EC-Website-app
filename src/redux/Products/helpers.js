@@ -2,7 +2,7 @@ import { firestore } from '../../firebase';
 
 export const handleAddProduct = (product) => {
     return new Promise((resolve, reject) => {
-        firestore.collection('products').doc().set(product, { merge: true}).then(() => {
+        firestore.collection('products').doc().set(product, { merge: true }).then(() => {
             resolve();
         }).catch((error) => {
             reject(error)
