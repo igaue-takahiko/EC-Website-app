@@ -7,5 +7,8 @@ export const initialState = {
     products: {
         products: [],
         product: {},
+    },
+    cart: {
+        cartItems: [],
     }
 };

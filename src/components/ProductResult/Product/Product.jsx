@@ -4,6 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import Aos from 'aos';
 
+import { addProduct } from '../../../redux/Cart/actions';
 import NoImage from '../../../assets/img/no_image.png';
 import { Button } from '../../Forms';
 
@@ -40,7 +41,7 @@ const Product = (product) => {
         if (!product) {
             return;
         }
-        dispatch();
+        dispatch(addProduct(product));
         history.push("/cart");
     }
 

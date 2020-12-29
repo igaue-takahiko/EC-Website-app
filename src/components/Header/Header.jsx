@@ -8,9 +8,11 @@ import CloseRoundedIcon from '@material-ui/icons/CloseRounded';
 import './Header.scss';
 import logo from '../../assets/img/logo.png';
 import { signOutUserStart } from '../../redux/User/actions';
+import { selectCartItemCount } from '../../redux/Cart/selectors';
 
 const mapState = (state) => ({
     currentUser: state.user.currentUser,
+    totalNumCartItems: selectCartItemCount(state)
 })
 
 const Header = () => {
@@ -20,7 +22,7 @@ const Header = () => {
     const [ click, setClick ] = useState(false);
 
     const handleClick = () => setClick(!click);
-    const closeModalMenu = useCallback((event) =>{
+    const closeModalMenu = useCallback((event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return
         }
@@ -41,7 +43,7 @@ const Header = () => {
                     </Link>
                 </div>
                 <IconButton className="menu__icon" onClick={handleClick}>
-                    {click ? <CloseRoundedIcon /> : <MenuRoundedIcon />}
+                    {click ? <CloseRoundedIcon style={{fontSize: 22 }} /> : <MenuRoundedIcon style={{fontSize: 22 }} />}
                 </IconButton>
                     <ul className={click ? "header__menu active" : "header__menu"}>
                         <li className="header__item">

@@ -1,4 +1,5 @@
 export { default as Admin } from './Admin/Admin';
+export { default as Cart } from './Cart/Cart';
 export { default as DashBoard } from './Dashboard/DashBoard';
 export { default as HomePage } from './HomePage/HomePage';
 export { default as Login } from './Login/Login';

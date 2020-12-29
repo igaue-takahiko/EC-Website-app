@@ -17,6 +17,7 @@ import {
 
 import {
     Admin,
+    Cart,
     HomePage,
     Recovery,
     Registration,
@@ -55,6 +56,11 @@ const App = () => {
                 <Route path="/product/:productID" render={() => (
                     <MainLayout>
                         <ProductDetails />
+                    </MainLayout>
+                )} />
+                <Route path="/cart" render={() => (
+                    <MainLayout>
+                        <Cart />
                     </MainLayout>
                 )} />
                 <Route path="/registration" render={() => (

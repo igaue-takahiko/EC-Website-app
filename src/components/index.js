@@ -1,5 +1,6 @@
 export { default as AdminToolbar } from './AdminToolbar/AdminToolbar';
 export { default as AuthWrapper } from './AuthWrapper/AuhWrapper';
+export { default as Checkout } from './Checkout/Checkout';
 export { default as Directory } from './Directory/Directory';
 export { default as EmailPassword } from './EmailPassword/EmailPassword';
 export { default as Footer } from './Footer/Footer';

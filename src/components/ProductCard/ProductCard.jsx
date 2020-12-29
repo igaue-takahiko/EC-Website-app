@@ -4,6 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 
 import { fetchProductStart, setProduct } from '../../redux/Products/actions';
+import { addProduct } from '../../redux/Cart/actions';
 import { Button } from '../Forms';
 import './ProductCard.scss';
 
@@ -29,7 +30,7 @@ const ProductCard = () => {
         if (!product) {
             return;
         };
-        dispatch();
+        dispatch(addProduct(product));
         history.push("/cart");
     };
 
