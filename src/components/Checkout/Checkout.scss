@@ -16,33 +16,24 @@
     .cart {
         max-width: 100.0rem;
         margin: 0 auto;
-
-        table {
-            width: 100%;
-        }
     }
 
     .checkoutHeader,
     .cart {
-        width: 100%;
-        text-align: left;
-
-        th,
-        td {
+        th {
             width: 22%;
         }
     }
 
-    .cartItem {
-        td img {
-            display: block;
-            object-fit: cover;
-            width: 100%;
-            height: 180px;
-        }
+    .productImage {
+        object-fit: cover;
+        width: 180px;
+        height: 180px;
     }
 
     .total {
+        text-align: center;
+        font-size: 2.5rem;
         color: rgb(216, 91, 75);
     }
 
@@ -50,12 +41,19 @@
         color: rgb(216, 91, 75);
     }
 
-    .cartRemoveBtn{
-        font-size: 25px;
+    .cartRemoveBtn {
+        height: 48px;
+        width: 48px;
         &:hover {
             color: rgb(216, 91, 75);
         }
     }
+
+    .cartButtons {
+        display: flex;
+        width: 100%;
+    }
+
     .errorMessage {
         height: 200px;
         width: 300px;
