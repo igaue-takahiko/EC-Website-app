@@ -1,10 +1,13 @@
 import React from 'react';
-import './Directory.scss'
+import { useHistory } from 'react-router-dom';
 
+import './Directory.scss'
 import WomansImage from './../../assets/img/woman.jpg';
 import MensImage from './../../assets/img/mens.jpg';
 
 const Directory = () => {
+    const history = useHistory();
+
     return (
         <div className="directory">
             <div className="wrap">
@@ -12,13 +15,21 @@ const Directory = () => {
                     className="itemWomen"
                     style={{ backgroundImage: `url(${WomansImage})` }}
                 >
-                    <button>Womens</button>
+                    <button
+                        onClick={() => history.push("/search/womens")}
+                    >
+                        Womens
+                    </button>
                 </div>
                 <div
                     className="itemMens"
                     style={{ backgroundImage: `url(${MensImage})` }}
                 >
-                    <button>Mens</button>
+                    <button
+                        onClick={() => history.push("/search/mens")}
+                    >
+                        Mens
+                    </button>
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@ const ImageArea = (props) => {
     const images = props.images
 
     const deleteImage = useCallback(async (id) => {
-        const ret = window.confirm("この画像を削除しましか？")
+        const ret = window.confirm("この画像を削除しますか？")
         if (!ret) {
             return false;
         } else {
@@ -46,7 +46,7 @@ const ImageArea = (props) => {
         <div>
             <div className="grid__list-images">
                 {images.length > 0 && (
-                    images.map(image => <ImagePreview id ={image.id} key={image.id} path={image.path} delete={deleteImage} />)
+                    images.map(image => <ImagePreview id={image.id} key={image.id} path={image.path} delete={deleteImage} />)
                 )}
             </div>
             <div>
@@ -55,7 +55,7 @@ const ImageArea = (props) => {
                     <label>
                         <AddPhotoAlternateIcon />
                         <input
-                            className="u-display-none" type="file" id="images"
+                            className="u-display-none" type="file" id="image"
                             onClick={e => uploadImage(e)}
                         />
                     </label>
