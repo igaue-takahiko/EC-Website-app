@@ -10,5 +10,9 @@ export const initialState = {
     },
     cart: {
         cartItems: [],
+    },
+    orders: {
+        orderHistory: [],
+        orderDetails: {},
     }
 };

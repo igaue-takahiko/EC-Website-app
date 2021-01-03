@@ -22,6 +22,7 @@ import {
     Recovery,
     Registration,
     Login,
+    Payment,
     DashBoard,
     Search,
     ProductDetails,
@@ -62,6 +63,13 @@ const App = () => {
                     <MainLayout>
                         <Cart />
                     </MainLayout>
+                )} />
+                <Route path="/payment" render={() => (
+                    <WithAuth>
+                        <MainLayout>
+                            <Payment />
+                        </MainLayout>
+                    </WithAuth>
                 )} />
                 <Route path="/registration" render={() => (
                     <MainLayout>

@@ -12,5 +12,5 @@ export const checkUserIsAdmin = (currentUser) => {
 }
 
 export const apiInstance = axios.create({
-    baseURL: ''
-})
+    baseURL: process.env.REACT_APP_FUNCTIONS_BASEURL
+});
