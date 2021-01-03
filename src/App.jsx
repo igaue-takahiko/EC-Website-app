@@ -22,6 +22,7 @@ import {
     Recovery,
     Registration,
     Login,
+    Order,
     Payment,
     DashBoard,
     Search,
@@ -90,6 +91,13 @@ const App = () => {
                     <WithAuth>
                         <DashBoardLayout>
                             <DashBoard />
+                        </DashBoardLayout>
+                    </WithAuth>
+                )} />
+                <Route path="/order/:orderID" render={() => (
+                    <WithAuth>
+                        <DashBoardLayout>
+                            <Order />
                         </DashBoardLayout>
                     </WithAuth>
                 )} />
