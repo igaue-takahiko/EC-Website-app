@@ -8,7 +8,7 @@ import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import './PaymentDetails.scss';
 import { apiInstance } from '../../Utils';
 import { selectCartTotal, selectCartItemCount, selectCartItems } from '../../redux/Cart/selectors';
-import { saveOrderHistory } from '../../redux/Orders/action';
+import { saveOrderHistory } from '../../redux/Orders/actions';
 import { FormInput, Button } from '../Forms';
 
 const initialAddressState = {

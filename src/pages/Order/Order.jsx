@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getOrderDetailsStart } from '../../redux/Orders/action';
+
+import { getOrderDetailsStart } from '../../redux/Orders/actions';
+import { OrderDetails } from '../../components';
 
 const mapState = ({ ordersData }) => ({
     orderDetails: ordersData.orderDetails
@@ -20,6 +22,8 @@ const Order = () => {
     return (
         <div>
             <h1>Order ID: #{orderID}</h1>
+            <OrderDetails order={orderDetails} />
+            <h3>Total: {orderTotal}</h3>
         </div>
     )
 }
