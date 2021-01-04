@@ -57,7 +57,7 @@ const ProductResult = () => {
         handleChange: handleFilter
     };
 
-    const configLoadMore = { onLoadMoreEvt: handleLoadMore }
+    const configLoadMore = { onLoadMoreEvent: handleLoadMore }
 
     return (
         <div className="products">
