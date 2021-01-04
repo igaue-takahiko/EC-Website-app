@@ -14,5 +14,9 @@ export const initialState = {
     orders: {
         orderHistory: [],
         orderDetails: {},
+    },
+    loading: {
+        LoadingState: false,
+        text: "",
     }
 };

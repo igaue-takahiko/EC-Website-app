@@ -6,6 +6,7 @@ export { default as EmailPassword } from './EmailPassword/EmailPassword';
 export { default as Footer } from './Footer/Footer';
 export { default as Header } from './Header/Header';
 export { default as ImageArea } from './ImageArea/ImageArea';
+export { default as Loading } from './Loading/Loading';
 export { default as LoadMore } from './LoadMore/LoadMore';
 export { default as Modal } from './Modal/Modal';
 export { default as OrderDetails } from './OrderDetails/OrderDetails';

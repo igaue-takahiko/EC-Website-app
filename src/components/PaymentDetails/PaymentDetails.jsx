@@ -86,7 +86,7 @@ const PaymentDetails = () => {
                     ...shippingAddress
                 }
             }
-        }).then(({ data: clientSelect }) => {
+        }).then(({ data: clientSecret }) => {
             stripe.createPaymentMethod({
                 type: "card",
                 card: cardElement,
@@ -97,13 +97,13 @@ const PaymentDetails = () => {
                     }
                 }
             }).then(({ paymentMethod }) => {
-                stripe.confirmCardPayment(clientSelect, {
+                stripe.confirmCardPayment(clientSecret, {
                     payment_method: paymentMethod.id
                 }).then(({ paymentIntent }) => {
-                    console.log(paymentIntent);
+                    console.log({paymentIntent});
                     const configOrder = {
-                        orderTotal: subtotal * 1.1,
-                        orderItem: cartItems.map((item) => {
+                        orderTotal: subtotal,
+                        orderItems: cartItems.map((item) => {
                             const {
                                 documentID,
                                 productThumbnail,
@@ -159,7 +159,7 @@ const PaymentDetails = () => {
                         handleChange={e => handleShipping(e)}
                     />
                     <FormInput
-                        required placeholder="Line 2" type="text"
+                        placeholder="Line 2" type="text"
                         name="line2" value={shippingAddress.line2}
                         handleChange={e => handleShipping(e)}
                     />
@@ -204,7 +204,7 @@ const PaymentDetails = () => {
                         handleChange={e => handleBilling(e)}
                     />
                     <FormInput
-                        required placeholder="Line 2" type="text"
+                        placeholder="Line 2" type="text"
                         name="line2" value={billingAddress.line2}
                         handleChange={e => handleBilling(e)}
                     />
