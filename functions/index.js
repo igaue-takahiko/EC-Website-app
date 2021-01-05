@@ -19,7 +19,7 @@ app.post('/payments/create', async (req, res) => {
             currency: "jpy"
         });
 
-        res.status(200).send(paymentIntent.client_secret);
+        res.status(200).send(paymentIntent.clientSecret);
     } catch (error) {
         res.status(500).json({
             statusCode: 500,
