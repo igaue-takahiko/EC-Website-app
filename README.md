@@ -1,1 +1,1 @@
-# EC-GraphQL-app
+# EC-Website-app
