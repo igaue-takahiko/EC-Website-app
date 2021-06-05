@@ -17,12 +17,12 @@
 
 ## **使用したライブラリ/フレームワーク**<br/>
 ・フロントエンド<br/>
- react / axios / react-router-dom<br/>
- redux / redux-thunk / redux-saga /reselect / react-redux / ckeditor4-react<br/>
- moment / redux-logger / redux-persist / aos<br/>
- @material-ui/core/ @material-ui/icons / node-sass<br/>
- @stripe/stripe-js / @stripe/react-stripe-js<br/>
+ 　react / axios / react-router-dom<br/>
+ 　redux / redux-thunk / redux-saga /reselect / react-redux / ckeditor4-react<br/>
+ 　moment / redux-logger / redux-persist / aos<br/>
+ 　@material-ui/core/ @material-ui/icons / node-sass<br/>
+ 　@stripe/stripe-js / @stripe/react-stripe-js<br/>
  
 ・バックエンド<br/>
 　　Firebase<br/>
-  ｆirebase-functions/ express / cors / stripe<br/>
+  firebase-functions/ express / cors / stripe<br/>
