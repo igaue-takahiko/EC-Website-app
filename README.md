@@ -24,5 +24,4 @@
  　@stripe/stripe-js / @stripe/react-stripe-js<br/>
  
 ・バックエンド<br/>
-  Firebase<br/>
-   firebase-functions/ express / cors / stripe<br/>
+  Firebase / firebase-functions/ express / cors / stripe<br/>
